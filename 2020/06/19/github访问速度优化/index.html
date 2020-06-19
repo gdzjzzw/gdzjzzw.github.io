@@ -16,7 +16,7 @@
 <meta property="og:description" content="github访问速度优化链接： https:&#x2F;&#x2F;github.com  测试： ping github.com 思路： 通过绕过DNS解析，直接在本地绑定host  （1）、在浏览器中打开DNS查询网站http:&#x2F;&#x2F;tool.chinaz.com&#x2F;dns，我们输入github.com  （2）、多次点击，在下方的结果列表中，选择TTL值小的IP地址。（一般1-10最佳，3600超时） （3、接着我">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-19T06:44:35.472Z">
-<meta property="article:modified_time" content="2020-06-19T06:44:35.615Z">
+<meta property="article:modified_time" content="2020-06-19T07:10:31.948Z">
 <meta property="article:author" content="钟志伟">
 <meta name="twitter:card" content="summary">
   
@@ -161,13 +161,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="github访问速度优化"><a href="#github访问速度优化" class="headerlink" title="github访问速度优化"></a>github访问速度优化</h3><p><strong>链接</strong>： <a href="https://github.com" target="_blank" rel="noopener">https://github.com</a> </p>
-<p><strong>测试</strong>： <code>ping github.com</code></p>
+<p><strong>测试</strong>： ping github.com</p>
 <p><strong>思路</strong>： 通过绕过DNS解析，直接在本地绑定host </p>
 <p>（1）、在浏览器中打开DNS查询网站<a href="http://tool.chinaz.com/dns，我们输入github.com" target="_blank" rel="noopener">http://tool.chinaz.com/dns，我们输入github.com</a> </p>
 <p>（2）、多次点击，在下方的结果列表中，选择TTL值小的IP地址。（一般1-10最佳，3600超时）</p>
 <p>（3、接着我们打开本地电脑的C:\Windows\System32\drivers\etc目录，找到hosts文件 </p>
 <p>（4）、我们使用文本编辑器打开hosts文件，并在文件的末尾一行添加如下信息：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.30.255.113(最低TTL的IP) github.com（访问网站）</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 最低TTL的IP	访问网站</span><br><span class="line">192.30.255.113	github.com</span><br></pre></td></tr></table></figure>
 
 <h4 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h4><p> <a href="https://baijiahao.baidu.com/s?id=1608100091125662190&amp;wfr=spider&amp;for=pc" target="_blank" rel="noopener">https://baijiahao.baidu.com/s?id=1608100091125662190&amp;wfr=spider&amp;for=pc</a> </p>
 
@@ -240,6 +240,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2020/06/19/%E5%9F%BA%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          基于hexo博客搭建
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
