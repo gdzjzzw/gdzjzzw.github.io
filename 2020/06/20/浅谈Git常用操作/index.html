@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | zzw-blog</title>
+  <title>浅谈Git常用操作 | zzw-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zzw-blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta name="description" content="浅谈Git常用操作用惯了git工具，git bash生疏了许多，空余之际，对常用的基本命令进行了整理。适用于对git了解操作过并且不是很了解的同学。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈Git常用操作">
+<meta property="og:url" content="http://yoursite.com/2020/06/20/%E6%B5%85%E8%B0%88Git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/index.html">
 <meta property="og:site_name" content="zzw-blog">
+<meta property="og:description" content="浅谈Git常用操作用惯了git工具，git bash生疏了许多，空余之际，对常用的基本命令进行了整理。适用于对git了解操作过并且不是很了解的同学。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-20T08:46:09.732Z">
+<meta property="article:modified_time" content="2020-06-22T06:25:18.751Z">
 <meta property="article:author" content="钟志伟">
 <meta name="twitter:card" content="summary">
   
@@ -136,130 +140,242 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-浅谈Git常用操作" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      浅谈Git常用操作
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/20/%E6%B5%85%E8%B0%88Git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+
+        
+        <a href="/2020/06/20/%E6%B5%85%E8%B0%88Git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" class="archive-article-date">
   	<time datetime="2020-06-20T08:46:09.732Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/20/%E6%B5%85%E8%B0%88Git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">浅谈Git常用操作</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="浅谈Git常用操作"><a href="#浅谈Git常用操作" class="headerlink" title="浅谈Git常用操作"></a>浅谈Git常用操作</h3><p>用惯了git工具，git bash生疏了许多，空余之际，对常用的基本命令进行了整理。适用于对git了解操作过并且不是很了解的同学。</p>
+<a id="more"></a> 
 
-        <div class="article-info info-on-right">
-          
-          
+<h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><p><strong>区间定义</strong>：</p>
+<p>工作区：写代码的地方</p>
+<p>暂存区：本地代码和本地仓库的中间缓存区域，在add和commit之间的区域。</p>
+<p>本地仓库（ <strong>版本库</strong> ）：本地版本管理仓库，本地代码最终提交的地方。</p>
+<p>远程仓库（ <strong>版本库</strong> ）：可理解为本地仓库的远程备份，通过git pull，git push操作。</p>
+<p><strong>命令列表</strong>：</p>
+<p>git init： 创建本地仓库。</p>
+<p>git add：把工作区的内容提交到暂存区。</p>
+<ol>
+<li>git add <filename>：添加指定文件到暂存区。</li>
+<li>git add -u：提交被修改(modified)和被删除(deleted)文件，不包括新(new)文件。</li>
+<li>git add .：添加所有更改文件到暂存区，不包括被删除(deleted)文件 。</li>
+<li>git add –all：添加所有的变化。</li>
+</ol>
+<p>git checkout：暂存区（本地仓库）覆盖工作区内容。</p>
+<ol>
+<li>git checkout <filename> ：从暂存区取某文件覆盖到工作区。</li>
+<li>git checkout .：暂存区所有文件覆盖到工作区。</li>
+<li>git checkout <branchName>：切换分支。</li>
+<li>git checkout -b <branchName> ：创建并切换分支。</li>
+</ol>
+<p>git diff：进行文件比较。</p>
+<ol>
+<li>git diff <filename>：比较工作目录和暂存区文件差异，显示已经修改的但是没有进入暂存区的内容 。</li>
+<li>git diff -staged  比较在暂存区域的改变和上一次提交的内容。 </li>
+<li>git diff –cached命令可以看暂存区里面的所有内容。 </li>
+</ol>
+<p>git commit：版本提交。</p>
+<ol>
+<li>git commit -m <description>：提交暂存区内容。</li>
+<li>git commit -am <description>：提交工作区内容。</li>
+<li>git commit –amend –no-edit：对于已经commit文件，修改重新git add之后，追加提交，不产生新记录。</li>
+</ol>
+<p>git status：查看git库的状态，分提交未加和未提交文件，A新增，M修改。</p>
+<p>git rm <filename>：删除工作区和暂存区文件。</p>
+<p>git log 版本日志</p>
+<ol>
+<li>git log –pretty=oneline 查看当前分支</li>
+<li>git log –graph  查看分支合并图 </li>
+<li>git log –graph –all –oneline 查看所有分支</li>
+</ol>
+<p>git cherry-pick：把当前分支或者其他分支的某次或多次提交添加到该分支末端。</p>
+<p>git revert：放弃某次提交并写入放弃记录。</p>
+<p>git reset：回滚重置。</p>
+<ol>
+<li>git reset HEAD 可以撤销 git add 操作 。</li>
+<li>git reset –soft <filename>：撤销某个文件的git add操作。</li>
+<li>git reset –mixed <commit>：撤销 git commit到暂存区。</li>
+<li>git reset –hard <commit>：撤销 git commit到工作区。</li>
+<li>git reset [–mixed/hard]  HEAD – <filename>：获取历史文件并覆盖到暂存区或工作区。</li>
+<li>git reset [–mixed/hard] HEAD^：撤销上次提交（还原上次版本）。</li>
+</ol>
+<p>git branch ：分支操作。</p>
+<ol>
+<li>git branch：查看分支。</li>
+<li>git branch  <branchName>：创建分支。</li>
+<li>git branch -d  <branchName>：删除分支。</li>
+</ol>
+<p>git merge  <branchName>：合并分支代码。</p>
+<p>git rebase <branchName>：合并commit记录，重置基点。</p>
+<p> git tag ：标签操作。</p>
+<ol>
+<li>git tag -a version -m <description>：添加标签。</li>
+<li>git tag -d version：删除标签。</li>
+<li>git push origin -tags：提交标签到远程仓库 。</li>
+<li>git push origin :refs/tags/version：删除远程仓库标签。</li>
+<li>git tag(git tag -l)：查看标签。</li>
+</ol>
+<p>git remote：远程操作。</p>
+<p>git remote：远程操作。</p>
+<ol>
+<li>git remote add origin <url>：添加远程仓库。</li>
+<li>git remote remove origin：移除远端仓库。</li>
+</ol>
+<p>git fetch origin &lt;远程分支名&gt;:&lt;本地分支名&gt;：获取远端分支更新到本地分支。</p>
+<p>git push【 -u origin master】：远程提交，非第一次提交可以去掉-u</p>
+<p>git pull【origin  &lt;远程分支名&gt;:&lt;本地分支名&gt;】：远程拉取。</p>
+<p>git show：各种信息各种样式显示。</p>
+<h4 id="项目git初始化"><a href="#项目git初始化" class="headerlink" title="项目git初始化"></a>项目git初始化</h4><p><strong>本地</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin &lt;url&gt;</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 
+<p><strong>配置</strong>：</p>
+<p><strong>记住密码</strong>：</p>
+<p>在.git/config末尾添加credential.helper配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[credential]</span><br><span class="line">   helper &#x3D; store</span><br></pre></td></tr></table></figure>
+
+<p><strong>gitignore</strong>：</p>
+<p>在根目录下创建.gitignore文件。</p>
+<p>注意：新加.gitignore只能忽略那些原来没有被提交过的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。</p>
+<p>解决方法就是先把本地缓存删除（改变成未track状态），然后再提交:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &#39;update .gitignore&#39;</span><br></pre></td></tr></table></figure>
+
+<h4 id="项目git维护"><a href="#项目git维护" class="headerlink" title="项目git维护"></a>项目git维护</h4><p><strong>日常操作</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git fetch</span><br><span class="line">git merge &lt;branchName&gt; || git rebase &lt;branchName&gt;</span><br><span class="line">### 修改代码</span><br><span class="line">git add --all</span><br><span class="line">git commit -m &lt;description&gt;</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p><strong>错误处理</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 撤销提交：</span><br><span class="line">git log --oneline</span><br><span class="line">git revert &lt;commit|HEAD&gt;</span><br><span class="line"># 追加提交：</span><br><span class="line">git commit –amend –no-edit</span><br><span class="line"># 文件回滚：</span><br><span class="line">git log --oneline &lt;filename&gt;</span><br><span class="line">git reset &lt;commit|HEAD&gt; &lt;filename&gt;</span><br><span class="line">git checkout &lt;filename&gt;</span><br><span class="line"># commit回滚：</span><br><span class="line">git log --oneline</span><br><span class="line">git reset &lt;commit|HEAD&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="其他："><a href="#其他：" class="headerlink" title="其他："></a>其他：</h4><p><strong>代码量统计</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log --since&#x3D;2019-09.01 --until&#x3D;2019-09.27 --author&#x3D;&quot;$(git config --get user.name)&quot; --pretty&#x3D;tformat: --numstat | gawk &#39;&#123; add +&#x3D; $1 ; subs +&#x3D; $2 ; loc +&#x3D; $1 - $2 &#125; END &#123; printf &quot;added lines: %s removed lines : %s total lines: %s\n&quot;,add,subs,loc &#125;&#39;</span><br></pre></td></tr></table></figure>
+
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/lxw198902165221/java/article/details/89228458" target="_blank" rel="noopener">https://blog.csdn.net/lxw198902165221/java/article/details/89228458</a></p>
+<p> <a href="https://www.liaoxuefeng.com/wiki/896043488029600/900002180232448" target="_blank" rel="noopener">https://www.liaoxuefeng.com/wiki/896043488029600/900002180232448</a> </p>
+<p> <a href="https://blog.csdn.net/edric1261234/article/details/82796506" target="_blank" rel="noopener">https://blog.csdn.net/edric1261234/article/details/82796506</a> </p>
+<p> <a href="https://www.jianshu.com/p/4079284dd970" target="_blank" rel="noopener">https://www.jianshu.com/p/4079284dd970</a> </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/20/%E6%B5%85%E8%B0%88Git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/20/%E5%9F%BA%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-06-20T08:30:59.285Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/20/%E5%9F%BA%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于hexo博客搭建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/20/%E5%9F%BA%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">基于hexo博客搭建</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/20/github%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2020-06-20T08:25:14.016Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/20/github%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/">github访问速度优化</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/20/%E5%8D%9A%E5%AE%A2%E5%BA%8F%E8%A8%80/" class="archive-article-date">
-  	<time datetime="2020-06-20T08:19:35.964Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/20/%E5%8D%9A%E5%AE%A2%E5%BA%8F%E8%A8%80/">博客序言</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -282,8 +398,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
