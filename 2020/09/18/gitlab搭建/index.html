@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | zzw-blog</title>
+  <title>gitlab搭建 | zzw-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zzw-blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="gitlab搭建之前一直是用公司的gitlab，空余之际，完善git体系知识网。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gitlab搭建">
+<meta property="og:url" content="http://yoursite.com/2020/09/18/gitlab%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="zzw-blog">
+<meta property="og:description" content="gitlab搭建之前一直是用公司的gitlab，空余之际，完善git体系知识网。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-18T08:03:59.586Z">
+<meta property="article:modified_time" content="2020-09-18T08:04:00.455Z">
 <meta property="article:author" content="钟志伟">
 <meta name="twitter:card" content="summary">
   
@@ -136,265 +140,155 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-gitlab搭建" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/23/%E7%BB%9F%E8%AE%A1%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-09-23T11:31:42.216Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/23/%E7%BB%9F%E8%AE%A1%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/">统计平台搭建</a>
+    <h1 class="article-title" itemprop="name">
+      gitlab搭建
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/18/gitlab%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+        
+        <a href="/2020/09/18/gitlab%E6%90%AD%E5%BB%BA/" class="archive-article-date">
   	<time datetime="2020-09-18T08:03:59.586Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/18/gitlab%E6%90%AD%E5%BB%BA/">gitlab搭建</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="gitlab搭建"><a href="#gitlab搭建" class="headerlink" title="gitlab搭建"></a>gitlab搭建</h2><p>之前一直是用公司的gitlab，空余之际，完善git体系知识网。</p>
+<a id="more"></a>
 
-        <div class="article-info info-on-right">
-          
-          
+<h3 id="配置要求"><a href="#配置要求" class="headerlink" title="配置要求"></a>配置要求</h3><p>观赏用内存2g，公司使用4g起步。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># ssh</span><br><span class="line">sudo yum install -y curl policycoreutils-python openssh-server</span><br><span class="line">systemctl enable sshd</span><br><span class="line">systemctl start sshd</span><br><span class="line"># 防火墻</span><br><span class="line">yum install firewalld systemd -y</span><br><span class="line">service firewalld  start</span><br><span class="line">firewall-cmd --permanent --add-service&#x3D;http</span><br><span class="line">firewall-cmd --zone&#x3D;public --add-port&#x3D;22&#x2F;tcp --permanent # esc记得开22</span><br><span class="line">reload firewalld</span><br><span class="line"># 邮件通知</span><br><span class="line">yum install postfix</span><br><span class="line">systemctl enable postfix</span><br><span class="line">systemctl start postfix</span><br><span class="line"># 下载镜像</span><br><span class="line">wget https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;gitlab-ce&#x2F;yum&#x2F;el7&#x2F;gitlab-ce-10.0.0-ce.0.el7.x86_64.rpm</span><br><span class="line"># 安装镜像</span><br><span class="line">rpm -i gitlab-ce-10.0.0-ce.0.el7.x86_64.rpm</span><br><span class="line"># 编辑配置</span><br><span class="line">vim  &#x2F;etc&#x2F;gitlab&#x2F;gitlab.rb</span><br><span class="line"></span><br><span class="line">external_url &#39;http:&#x2F;&#x2F;115.29.206.59:9000&#39; # 访问链接+ 端口</span><br><span class="line">unicorn[&#39;port&#39;] &#x3D; 9999 # 解决和8080端口冲突</span><br><span class="line"># 配置重载并重启gitlab</span><br><span class="line">gitlab-ctl reconfigure</span><br><span class="line">gitlab-ctl restart</span><br></pre></td></tr></table></figure>
 
+<h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><p>内存吃不消，从入门到放弃。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 停止运行</span><br><span class="line">gitlab-ctl stop</span><br><span class="line"># 卸载</span><br><span class="line">rpm -e gitlab-ce</span><br><span class="line"># 关闭进程</span><br><span class="line">ps aux | grep gitlab</span><br><span class="line">ps -ef | grep gitlab | xargs kill -s 9 </span><br><span class="line"># 删除所有文件</span><br><span class="line">find &#x2F; -name gitlab | xargs rm -rf</span><br></pre></td></tr></table></figure>
+
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>安装： <a href="https://www.cnblogs.com/zhangycun/p/10963094.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhangycun/p/10963094.html</a> </p>
+<p>502： <a href="https://www.cnblogs.com/zuikeol/p/11525797.html" target="_blank" rel="noopener">https://www.cnblogs.com/zuikeol/p/11525797.html</a> </p>
+<p>卸载： <a href="https://www.jianshu.com/p/e2e98c45c244" target="_blank" rel="noopener">https://www.jianshu.com/p/e2e98c45c244</a> </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/18/gitlab%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/17/python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-09-17T06:19:03.145Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-17</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/09/23/%E7%BB%9F%E8%AE%A1%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          统计平台搭建
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/17/python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">python环境搭建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/17/python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">python环境搭建</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/14/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-09-14T08:31:42.330Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/14/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">lnmp环境搭建</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/09/gin%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-07-09T02:50:47.303Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/09/gin%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">gin学习笔记</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/22/%E6%B5%85%E8%B0%88Git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2020-06-22T06:37:19.542Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/22/%E6%B5%85%E8%B0%88Git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">浅谈Git常用操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/20/%E5%9F%BA%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-06-20T08:30:59.285Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/20/%E5%9F%BA%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">基于hexo博客搭建</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/20/github%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2020-06-20T08:25:14.016Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/20/github%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/">github访问速度优化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/20/%E5%8D%9A%E5%AE%A2%E5%BA%8F%E8%A8%80/" class="archive-article-date">
-  	<time datetime="2020-06-20T08:19:35.964Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/20/%E5%8D%9A%E5%AE%A2%E5%BA%8F%E8%A8%80/">博客序言</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -417,8 +311,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

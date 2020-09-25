@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | zzw-blog</title>
+  <title>python环境搭建 | zzw-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zzw-blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="python环境搭建脚本首选python3，如果要用python进行网络编辑， Tornado（接口推荐） 、 Django （传统MVC）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python环境搭建">
+<meta property="og:url" content="http://yoursite.com/2020/09/17/python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="zzw-blog">
+<meta property="og:description" content="python环境搭建脚本首选python3，如果要用python进行网络编辑， Tornado（接口推荐） 、 Django （传统MVC）。">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-09-17T06:19:03.145Z">
+<meta property="article:modified_time" content="2020-09-17T09:12:57.245Z">
 <meta property="article:author" content="钟志伟">
 <meta name="twitter:card" content="summary">
   
@@ -136,265 +140,162 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-python环境搭建" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/23/%E7%BB%9F%E8%AE%A1%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-09-23T11:31:42.216Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/23/%E7%BB%9F%E8%AE%A1%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/">统计平台搭建</a>
+    <h1 class="article-title" itemprop="name">
+      python环境搭建
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/18/gitlab%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-09-18T08:03:59.586Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/18/gitlab%E6%90%AD%E5%BB%BA/">gitlab搭建</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/17/python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
+        
+        <a href="/2020/09/17/python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
   	<time datetime="2020-09-17T06:19:03.145Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/17/python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">python环境搭建</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="python环境搭建"><a href="#python环境搭建" class="headerlink" title="python环境搭建"></a>python环境搭建</h2><p>脚本首选python3，如果要用python进行网络编辑， Tornado（接口推荐） 、 Django （传统MVC）。</p>
+<a id="more"></a> 
 
-        <div class="article-info info-on-right">
-          
-          
+<h3 id="依赖安装"><a href="#依赖安装" class="headerlink" title="依赖安装"></a>依赖安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel libffi-devel</span><br></pre></td></tr></table></figure>
 
+<h3 id="python3安装"><a href="#python3安装" class="headerlink" title="python3安装"></a>python3安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 下载python3</span><br><span class="line">wget https:&#x2F;&#x2F;www.python.org&#x2F;ftp&#x2F;python&#x2F;3.9.0&#x2F;Python-3.9.0a1.tgz</span><br><span class="line"># 解压</span><br><span class="line">tar -zxvf Python-3.9.0a1.tgz </span><br><span class="line"># 配置</span><br><span class="line">.&#x2F;configure --prefix&#x3D;&#x2F;usr&#x2F;local&#x2F;python3</span><br><span class="line"># 编译并安装</span><br><span class="line">make &amp;&amp; make install</span><br><span class="line"># 创建软链接</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;python3&#x2F;bin&#x2F;python3.9 &#x2F;usr&#x2F;bin&#x2F;python3</span><br><span class="line">ln -s &#x2F;usr&#x2F;local&#x2F;python3&#x2F;bin&#x2F;pip3.9 &#x2F;usr&#x2F;bin&#x2F;pip3</span><br><span class="line"># 查看验证</span><br><span class="line">python3 -v</span><br></pre></td></tr></table></figure>
+
+<h3 id="虚拟环境搭建"><a href="#虚拟环境搭建" class="headerlink" title="虚拟环境搭建"></a>虚拟环境搭建</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">pip3 install virtualenv virtualenvwrapper</span><br><span class="line"># 编辑配置环境</span><br><span class="line">cd &#x2F;root&#x2F;</span><br><span class="line">ls -a </span><br><span class="line">vim .bashrc</span><br><span class="line"></span><br><span class="line"># virtualenvs init</span><br><span class="line">export WORKON_HOME&#x3D;$HOME&#x2F;.virtualenvs</span><br><span class="line">source &#x2F;usr&#x2F;local&#x2F;python3&#x2F;bin&#x2F;virtualenvwrapper.sh</span><br><span class="line"></span><br><span class="line">source ~&#x2F;.bashrc</span><br></pre></td></tr></table></figure>
+
+<p>常用命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、创建基本环境：mkvirtualenv [环境名]</span><br><span class="line">2、删除环境：rmvirtualenv [环境名]</span><br><span class="line">3、激活环境：workon [环境名]</span><br><span class="line">4、退出环境：deactivate</span><br><span class="line">5、列出所有环境：workon 或者 lsvirtualenv -b</span><br></pre></td></tr></table></figure>
+
+<h3 id="守护进程"><a href="#守护进程" class="headerlink" title="守护进程"></a>守护进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"># 使用yum安装supervisor</span><br><span class="line">yum install supervisor                          </span><br><span class="line"># 设置开机自启</span><br><span class="line">systemctl enable supervisord.service</span><br><span class="line"># 编辑conf文件</span><br><span class="line">vim &#x2F;etc&#x2F;supervisord.conf</span><br><span class="line"></span><br><span class="line">例如：</span><br><span class="line"></span><br><span class="line">[group:thegroupname]</span><br><span class="line">programs&#x3D;api-bdadmin,progname2  </span><br><span class="line">priority&#x3D;999</span><br><span class="line"></span><br><span class="line">[program:api-bdadmin]</span><br><span class="line">process_name&#x3D;api-bdadmin-%(process_num)s</span><br><span class="line">command&#x3D;python2.7 index.py --port&#x3D;%(process_num)s</span><br><span class="line">directory&#x3D;&#x2F;data&#x2F;www&#x2F;api-bdadmin&#x2F;</span><br><span class="line">user&#x3D;root</span><br><span class="line">autorestart&#x3D;true</span><br><span class="line">startretries&#x3D;99</span><br><span class="line">redirect_stderr&#x3D;true</span><br><span class="line">stdout_logfile_backups&#x3D;100</span><br><span class="line">stdout_logfile&#x3D;&#x2F;data&#x2F;log&#x2F;api-bdadmin&#x2F;app.log</span><br><span class="line">loglevel&#x3D;info</span><br><span class="line">numprocs&#x3D;2</span><br><span class="line">numprocs_start&#x3D;7400</span><br><span class="line">environment&#x3D;PATH&#x3D;&quot;&#x2F;root&#x2F;.virtualenvs&#x2F;api-bdadmin&#x2F;bin&quot;</span><br><span class="line"></span><br><span class="line"># 编辑完重载</span><br><span class="line">supervisorctl update</span><br><span class="line"># 查看项目状态</span><br><span class="line">supervisorctl status</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>python3 :  <a href="https://www.linuxidc.com/Linux/2018-07/153286.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2018-07/153286.htm</a> </p>
+<p>virtualenv： <a href="https://www.cnblogs.com/shhnwangjian/p/6365418.html" target="_blank" rel="noopener">https://www.cnblogs.com/shhnwangjian/p/6365418.html</a> </p>
+<p>supervisor：<a href="https://www.cnblogs.com/quzq/p/11192993.html" target="_blank" rel="noopener">https://www.cnblogs.com/quzq/p/11192993.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/09/17/python%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/09/14/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-09-14T08:31:42.330Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-09-14</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/09/18/gitlab%E6%90%AD%E5%BB%BA/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          gitlab搭建
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/09/14/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">lnmp环境搭建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/09/14/lnmp%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">lnmp环境搭建</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/07/09/gin%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  	<time datetime="2020-07-09T02:50:47.303Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/07/09/gin%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">gin学习笔记</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/22/%E6%B5%85%E8%B0%88Git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2020-06-22T06:37:19.542Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/22/%E6%B5%85%E8%B0%88Git%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/">浅谈Git常用操作</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/20/%E5%9F%BA%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="archive-article-date">
-  	<time datetime="2020-06-20T08:30:59.285Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/20/%E5%9F%BA%E4%BA%8Ehexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">基于hexo博客搭建</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/20/github%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/" class="archive-article-date">
-  	<time datetime="2020-06-20T08:25:14.016Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/20/github%E8%AE%BF%E9%97%AE%E9%80%9F%E5%BA%A6%E4%BC%98%E5%8C%96/">github访问速度优化</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/06/20/%E5%8D%9A%E5%AE%A2%E5%BA%8F%E8%A8%80/" class="archive-article-date">
-  	<time datetime="2020-06-20T08:19:35.964Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/20/%E5%8D%9A%E5%AE%A2%E5%BA%8F%E8%A8%80/">博客序言</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -417,8 +318,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
